@@ -28,9 +28,9 @@ urlpatterns = [
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="My API",
+      title="Recipe Hub API",
       default_version='v1',
-      description="Test description",
+      description="Modern REST API for browsing and managing recipes. Auth via token; use /api/auth/login/ to obtain token.",
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
@@ -51,9 +51,9 @@ def dynamic_schema_view(request, *args, **kwargs):
     url = get_full_url(request)
     view = get_schema_view(
         openapi.Info(
-            title="My API",
+            title="Recipe Hub API",
             default_version='v1',
-            description="API Docs",
+            description="Browse, create, and share recipes. Obtain a token via /api/auth/login/ and include 'Authorization: Token <token>'.",
         ),
         public=True,
         url=url,
